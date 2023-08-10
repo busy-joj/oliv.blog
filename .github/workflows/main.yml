@@ -16,9 +16,7 @@ jobs:
         with:
           node-version: 18
       - name: Build
-        run: |
-          npm ci
-          npm run build
+        run: npm run build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
