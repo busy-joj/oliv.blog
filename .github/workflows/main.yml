@@ -24,6 +24,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
       - name: Deploy
-        uses: gatsby build
+        uses: npm run deploy
         with:
           dest-s3-bucket: olivblog
