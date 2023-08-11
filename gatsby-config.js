@@ -39,25 +39,25 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     }, 
-    {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: "olivblog",
-      },
-    },
-    {
-      resolve: `gatsby-source-s3`,
-      options: {
-        aws: {
-          credentials: {
-            accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-            secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-          },
-          region: process.env.AWS_REGION,
-        },
-        buckets: ["olivblog"],
-        expiration: 120,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-s3`,
+    //   options: {
+    //     bucketName: "olivblog",
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-s3`,
+    //   options: {
+    //     aws: {
+    //       credentials: {
+    //         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    //         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    //       },
+    //       region: process.env.AWS_REGION,
+    //     },
+    //     buckets: ["olivblog"],
+    //     expiration: 120,
+    //   },
+    // },
   ],
 }
