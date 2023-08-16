@@ -36,28 +36,17 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.ico`, // This path is relative to the root of the site.
       },
     }, 
-    // {
-    //   resolve: `gatsby-plugin-s3`,
-    //   options: {
-    //     bucketName: "olivblog",
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-s3`,
-    //   options: {
-    //     aws: {
-    //       credentials: {
-    //         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    //         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    //       },
-    //       region: process.env.AWS_REGION,
-    //     },
-    //     buckets: ["olivblog"],
-    //     expiration: 120,
-    //   },
-    // },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-react-helmet`,
+    {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+            name: `images`,
+            path: `${__dirname}/src/`,
+        },
+    }
   ],
 }
