@@ -84,7 +84,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <div className={styles.textCenter}>
-        <h2>Welcome! {data.site.siteMetadata.title || `Title`}</h2>
+        <h2>Welcome! 💫 {data.site.siteMetadata.title || `Title`}</h2>
 
         <p className={styles.intro}>
           <b>Example pages:</b>{" "}
