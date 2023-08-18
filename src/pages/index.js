@@ -20,6 +20,7 @@ const IndexPage = ({ data }) => {
 							<span className="desc">{node.excerpt}</span>
 							<span>
 								<span className="tag">Javascript</span>
+								<span className="tag">react</span>
 								<span className="tag">gatsby</span>
 							</span>
 						</div>

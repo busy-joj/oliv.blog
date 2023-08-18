@@ -3,7 +3,9 @@ name: deploy
 on:
   push:
     branches: main
-
+  pull_request:
+    branches: main
+    
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,12 +17,15 @@ jobs:
       - name: Build
         run: npm run build
       - name: Configure AWS Credentials
+        if: github.event_name == 'push'
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy to S3
+        if: github.event_name == 'push'
         run : aws s3 sync ./public s3://${{ secrets.AWS_BUCKET_NAME }} --delete
       - name : Invalidate Cloudfront
+        if: github.event_name == 'push'
         run : aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLUODFRONT_DISTRIBUTION_ID }} --paths "/*"
