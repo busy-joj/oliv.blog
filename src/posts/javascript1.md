@@ -1,4 +1,5 @@
 ---
+slug: "/js-async"
 title: "script 태그의 async와 defer 속성(ft.웹 브라우저)"
 date: "2023-08-04"
 category: "Javascript"

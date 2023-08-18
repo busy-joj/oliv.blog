@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { FaGithub } from 'react-icons/fa6'
+
 import './layout.css'
 
 const Aside = () => (
@@ -12,9 +13,14 @@ const Aside = () => (
             </span>
         </div>
         <div class="aside-txt">
+            {/* <div className="main-intro">
+					<h2>Welcome!💫 {data.site.siteMetadata.title}</h2>
+					<p>안녕하세요!</p>
+					<p>지속가능한 프론트엔드 개발자 oliv입니다!</p>
+				</div> */}
+            {/* <h4>{data.allMarkdownRemark.totalCount} Post</h4> */}
             <span class="name">category</span>
             <ul>
-                {/* <li class="info">All<span> { totalCount }</span></li> */}
                 <li class="info">
                     <Link to='/' className="info-link">All<span> (0)</span></Link>
                 </li>
