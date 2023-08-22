@@ -15,8 +15,9 @@ const postTemplate = ({ data }) => {
 				<div className='post-article-info'>
 					<span className='date'>{frontmatter.date}</span>
 					<span>
-						<span className='tag'>{frontmatter.category}</span>
-						<span className='tag'>gatsby</span>
+						{frontmatter.tags.map(tag =>(
+							<span className='tag'>{tag}</span>
+						))}
 					</span>
 				</div>
 				<div 
@@ -38,6 +39,7 @@ export const query = graphql`
 				category
 				date
 				title
+				tags
 			}
 		}
 	}
