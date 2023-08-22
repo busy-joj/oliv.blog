@@ -15,8 +15,8 @@ const postTemplate = ({ data }) => {
 				<div className='post-article-info'>
 					<span className='date'>{frontmatter.date}</span>
 					<span>
-						{frontmatter.tags.map(tag =>(
-							<span className='tag'>{tag}</span>
+						{frontmatter.tags.map(v =>(
+							<span className='tag'>{v}</span>
 						))}
 					</span>
 				</div>
