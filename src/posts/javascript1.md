@@ -18,7 +18,7 @@ async와 defer는 script의 <span style="font-weight:600;">실행 시점을 조�
 
 ### ✏️웹 브라우저의 동작
 먼저 웹 브라우저가 어떻게 동작하는지 알아야합니다!
-<img scr="https://velog.velcdn.com/images/3436rngus/post/53d67c7d-8b68-4160-8cbd-4f7182764c6e/image.png" alt="">
+<img src="../images/example.png" alt="">
 
 브라우저는 서버로 부터 HTML, CSS, Javascript를 응답받고 해석합니다.  
  - HTML과 CSS파일은 렌더링 엔진에서 파싱 -> DOM 트리 + CSSOM 트리 = 렌더 트리

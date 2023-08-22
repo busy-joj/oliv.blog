@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const postTemplate = ({ data, children }) => {
+const postTemplate = ({ data }) => {
 	let { markdownRemark } = data
 	let { frontmatter, html } = markdownRemark
 	return (
@@ -24,7 +24,6 @@ const postTemplate = ({ data, children }) => {
 					dangerouslySetInnerHTML={{ __html: html }}
 				/>
 			</div>
-			{children}
 		</Layout>
 	)
 }
