@@ -3,6 +3,7 @@ slug: "/css-in-js"
 title: "CSS Preprocessors 및 CSS-in-JS (Emotion) 사용 이유 및 CSS Framework (Tailwind CSS)"
 date: "2023-08-18"
 category: "css"
+tags: ["css","css-in-JS","Tailwind"]
 ---
 
 <img scr="https://file.okky.kr/images/1686652707201.gif" alt="">

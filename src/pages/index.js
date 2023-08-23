@@ -19,9 +19,7 @@ const IndexPage = ({ data }) => {
 							<span className="date">{node.frontmatter.date}</span>
 							<span className="desc">{node.excerpt}</span>
 							<span>
-								<span className="tag">Javascript</span>
-								<span className="tag">react</span>
-								<span className="tag">gatsby</span>
+								<span className="tag">{node.frontmatter.tags}</span>
 							</span>
 						</div>
 					))}
@@ -48,7 +46,8 @@ export const query = graphql`
 						category
 						date(formatString: "DD MMMM, YYYY")
 						title
-            slug
+						slug
+						tags
 					}
 					excerpt
 				}

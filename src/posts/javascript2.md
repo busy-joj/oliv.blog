@@ -3,6 +3,7 @@ slug: "/test2"
 title: "js파일의 사이즈가 어마어마하게 크다면?"
 date: "2023-08-18"
 category: "Javascript"
+tags: ["Javascript"]
 ---
 스크립트 태그(CSS, JS) 내 속성 Async, Defer 의 정의 및 동작 원리의 차이
 async와 defer는 script의 <span style="font-weight:600;">실행 시점을 조절하는 속성</span>입니다.

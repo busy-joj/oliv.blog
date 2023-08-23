@@ -3,6 +3,7 @@ slug: "/js-async"
 title: "script 태그의 async와 defer 속성(ft.웹 브라우저)"
 date: "2023-08-04"
 category: "Javascript"
+tags: ["Javascript"]
 ---
 스크립트 태그(CSS, JS) 내 속성 Async, Defer 의 정의 및 동작 원리의 차이
 # script 태그의 async와 defer  
