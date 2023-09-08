@@ -5,9 +5,7 @@ import { FaGithub } from "react-icons/fa6"
 
 import "./layout.css"
 
-const Aside = data => {
-    let { allMarkdownRemark } = data
-    let { group } = allMarkdownRemark
+const Aside = () => {
     return (
         <div class="aside">
             <div class="aside-img">
@@ -28,9 +26,6 @@ const Aside = data => {
                 {/* <h4>{data.allMarkdownRemark.totalCount} Post</h4> */}
                 <span class="name">category</span>
                 <ul>
-                    {group.map(v => (
-                        <li>{v}</li>
-                    ))}
                     <li class="info">
                         <Link to="/" className="info-link">
                             All<span> (0)</span>
@@ -70,16 +65,5 @@ const Aside = data => {
         </div>
     )
 }
-
-export const query = graphql`
-    query {
-        allMarkdownRemark(limit: 10) {
-            group(field: { frontmatter: { category: SELECT } }) {
-                fieldValue
-                totalCount
-            }
-        }
-    }
-`
 
 export default Aside
