@@ -13,7 +13,16 @@ module.exports = {
         `gatsby-plugin-image`,
         {
             resolve: `gatsby-transformer-remark`,
-            options: {},
+            options: {
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 800,
+                        },
+                    },
+                ],
+            },
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
