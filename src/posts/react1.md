@@ -12,7 +12,8 @@ eslint, prettier의 몇가지 설정을 한 채로 프로젝트를 진행했다.
 ### 🚨 에러 발생
 
 그러나, 이 부분에서 자꾸 에러가 났다...  
-<img scr="../images/react1.png" alt="에러메세지">
+![에러메세지]("../images/react1.png")
+<img src="../images/react1.png" alt="에러메세지"/>
 
 React라는 변수가 쓰이지 않았다는 오류다;;
 
