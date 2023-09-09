@@ -11,7 +11,9 @@ const postTemplate = ({ data }) => {
         <Layout>
             <Seo title={frontmatter.title} />
             <div className="post-article">
-                <h2 className="post-article-tit">{frontmatter.title}</h2>
+                <h2 className="post-article-tit">
+                    [{frontmatter.category}]&nbsp;{frontmatter.title}
+                </h2>
                 <div className="post-article-info">
                     <span className="date">{frontmatter.date}</span>
                     <span>

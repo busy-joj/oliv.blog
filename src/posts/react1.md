@@ -12,7 +12,6 @@ eslint, prettier의 몇가지 설정을 한 채로 프로젝트를 진행했다.
 ### 🚨 에러 발생
 
 그러나, 이 부분에서 자꾸 에러가 났다...  
-![에러메세지]("../images/react1.png")
 <img src="../images/react1.png" alt="에러메세지"/>
 
 React라는 변수가 쓰이지 않았다는 오류다;;
@@ -27,7 +26,9 @@ VSCode에서 자꾸 빨간 줄과 표시가 생겨서 심기가 불편했다.
     no-unused-vars
     Disallow unused variables
 
-    Variables that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring. Such variables take up space in the code and can lead to confusion by readers.
+    Variables that are declared and not used anywhere in the code are most likely an
+    error due to incomplete refactoring. Such variables take up space in the code and
+    can lead to confusion by readers.
 
 선언되었지만 사용되지 않은 변수는 오류일 가능성으로 보고 에러메세지를 준다는 것이다.
 React같이 참조적으로 불러오는 경우에도 에러가 발생했던 것이다. 으어..
@@ -54,6 +55,6 @@ React같이 참조적으로 불러오는 경우에도 에러가 발생했던 것
 나의 코드에 평화가 찾아온듯 기쁘다.  
 eslint, prettier 설정을 까먹지 말고 살펴보고 프로젝트를 시작하는 습관을 기르자!
 
-## 출처
+### 출처
 
 -   https://eslint.org/docs/latest/rules/
