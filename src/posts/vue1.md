@@ -6,9 +6,6 @@ category: "Vue"
 tags: ["Vue", ":is"]
 ---
 
-토이 프로젝트를 위해 React 프로젝트를 생성하고,  
-eslint, prettier의 몇가지 설정을 한 채로 프로젝트를 진행했다.
-
 ### component
 
 component 태그는 Build-in Component로 동적 컴포넌트를 렌더링하기 위한 ‘메타 컴포넌트’이다.  
