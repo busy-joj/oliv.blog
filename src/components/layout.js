@@ -8,27 +8,43 @@ import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          author
+    const data = useStaticQuery(graphql`
+        query SiteTitleQuery {
+            allMarkdownRemark {
+                distinct(field: { frontmatter: { category: SELECT } })
+                totalCount
+                nodes {
+                    frontmatter {
+                        category
+                    }
+                }
+            }
+            site {
+                siteMetadata {
+                    author
+                    title
+                }
+            }
         }
-      }
-    }
-  `)
+    `)
 
-  return (
-    <div className="wrap">
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <main className="main">
-        <Aside />
-        <div className="content">{children}</div>
-      </main>
-      <Footer siteTitle={data.site.siteMetadata?.title || `Title`} siteAthor={data.site.siteMetadata?.author || `author`} />
-    </div>
-  )
+    return (
+        <div className="wrap">
+            <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+            <main className="main">
+                <Aside
+                    siteCatagory={data.allMarkdownRemark.distinct}
+                    siteCatagories={data.allMarkdownRemark.nodes.frontmatter}
+                    siteArticleTotal={data.allMarkdownRemark.totalCount}
+                />
+                <div className="content">{children}</div>
+            </main>
+            <Footer
+                siteTitle={data.site.siteMetadata?.title || `Title`}
+                siteAthor={data.site.siteMetadata?.author || `author`}
+            />
+        </div>
+    )
 }
 
 export default Layout

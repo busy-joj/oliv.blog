@@ -1,11 +1,12 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { FaGithub } from "react-icons/fa6"
+import { FaGithub, FaLinkedin } from "react-icons/fa6"
 
 import "./layout.css"
 
-const Aside = () => {
+const Aside = ({ siteCatagory, siteCatagories, siteArticleTotal }) => {
+    function catagoryCount() {}
     return (
         <div class="aside">
             <div class="aside-img">
@@ -28,24 +29,16 @@ const Aside = () => {
                 <ul>
                     <li class="info">
                         <Link to="/" className="info-link">
-                            All<span> (0)</span>
+                            All<span> ({siteArticleTotal})</span>
                         </Link>
                     </li>
-                    <li class="info">
-                        <Link to="/" className="info-link">
-                            Javascript
-                        </Link>
-                    </li>
-                    <li class="info">
-                        <Link to="/" className="info-link">
-                            Javascript
-                        </Link>
-                    </li>
-                    <li class="info">
-                        <Link to="/" className="info-link">
-                            Javascript
-                        </Link>
-                    </li>
+                    {siteCatagory.map(catagory => (
+                        <li class="info">
+                            <Link to="/" className="info-link">
+                                {catagory}
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </div>
             <div class="aside-bt">
@@ -53,13 +46,9 @@ const Aside = () => {
                     <FaGithub className="btn-icon" />
                     <span className="blind">GitHub</span>
                 </Link>
-                <Link to="https://github.com/busy-joj">
-                    <FaGithub className="btn-icon" />
-                    <span className="blind">GitHub</span>
-                </Link>
-                <Link to="https://github.com/busy-joj">
-                    <FaGithub className="btn-icon" />
-                    <span className="blind">GitHub</span>
+                <Link to="https://www.linkedin.com/in/jyj-frontenddev/">
+                    <FaLinkedin className="btn-icon" />
+                    <span className="blind">Linkedin</span>
                 </Link>
             </div>
         </div>

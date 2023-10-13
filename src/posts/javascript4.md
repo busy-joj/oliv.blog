@@ -2,7 +2,7 @@
 slug: "/intersection-observer"
 title: "스크롤 애니메이션 new IntersectionObserver()"
 date: "2023-09-28"
-category: "javascript"
+category: "Javascript"
 tags: ["Javascript", "scroll", "animation"]
 ---
 
