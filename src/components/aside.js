@@ -1,12 +1,11 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { FaGithub, FaLinkedin } from "react-icons/fa6"
 
 import "./layout.css"
 
-const Aside = ({ siteCatagory, siteCatagories, siteArticleTotal }) => {
-    function catagoryCount() {}
+const Aside = ({ siteCatagory, siteArticleTotal }) => {
     return (
         <div class="aside">
             <div class="aside-img">
@@ -19,12 +18,6 @@ const Aside = ({ siteCatagory, siteCatagories, siteArticleTotal }) => {
                 </span>
             </div>
             <div class="aside-txt">
-                {/* <div className="main-intro">
-                <h2>Welcome!💫 {data.site.siteMetadata.title}</h2>
-                <p>안녕하세요!</p>
-                <p>지속가능한 프론트엔드 개발자 oliv입니다!</p>
-            </div> */}
-                {/* <h4>{data.allMarkdownRemark.totalCount} Post</h4> */}
                 <span class="name">category</span>
                 <ul>
                     <li class="info">
@@ -35,7 +28,7 @@ const Aside = ({ siteCatagory, siteCatagories, siteArticleTotal }) => {
                     {siteCatagory.map(catagory => (
                         <li class="info">
                             <Link to="/" className="info-link">
-                                {catagory}
+                                {catagory.fieldValue}({catagory.totalCount})
                             </Link>
                         </li>
                     ))}

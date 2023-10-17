@@ -11,13 +11,11 @@ const Layout = ({ children }) => {
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             allMarkdownRemark {
-                distinct(field: { frontmatter: { category: SELECT } })
-                totalCount
-                nodes {
-                    frontmatter {
-                        category
-                    }
+                group(field: { frontmatter: { category: SELECT } }) {
+                    fieldValue
+                    totalCount
                 }
+                totalCount
             }
             site {
                 siteMetadata {
@@ -33,8 +31,7 @@ const Layout = ({ children }) => {
             <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
             <main className="main">
                 <Aside
-                    siteCatagory={data.allMarkdownRemark.distinct}
-                    siteCatagories={data.allMarkdownRemark.nodes.frontmatter}
+                    siteCatagory={data.allMarkdownRemark.group}
                     siteArticleTotal={data.allMarkdownRemark.totalCount}
                 />
                 <div className="content">{children}</div>
