@@ -1,6 +1,6 @@
 ---
 slug: "/react-useEffect"
-title: "useEffect 사용법과 안티패턴 그리고 React Query, SWR"
+title: "useEffect 사용법과 안티패턴"
 date: "2023-08-27"
 category: "React"
 tags: ["Javascript", "React", "useEffect"]
@@ -165,67 +165,5 @@ function TodoList({ todos, filter }) {
     }, [todos, filter])
 
     return <div>{/* todo list JSX */}</div>
-}
-```
-
-## React-Query vs SWR
-
-### React-Query
-
-React Query는 React Application에서 서버 상태를 불러오고, 캐싱하며, 지속적으로 동기화하고 업데이트하는 작업을 도와주는 라이브러리입니다.
-쉽게 말해 비동기 데이터를 불러오는 과정 중 발생하는 문제들을 해결해줍니다.
-
-```javascript
-    import {  useQuery } from '@tanstack/react-query';
-    import axios from 'axios';
-
-    const fetcher= () => {
-    return axios.get(`/api/allassets,fetcher`);
-    };
-
-    function Explore=()=>{
-    const {isLoading, error, data, isFetching} = useQuery("assets",fetcher);
-
-    return (
-        <div>
-        {data.map(asset=><p>{asset.name}</p>)}
-        </div>
-    )}
-```
-
-#### React Query가 해결해주는 문제
-
-1.  get을 한 데이터에 대해 update를 하면 자동으로 get을 다시 수행
-2.  데이터가 오래 되었다고 판단되면 다시 get
-3.  동일 데이터 여러번 요청하면 한번만 요청
-4.  무한 스크롤
-
-#### useQuery
-
-data fetching을 위해 제공하는 기능으로 주로 GET 요청을 할 때 사용합니다.
-
--   queryKey(첫번째 파라미터): Query를 Unique key로 사용되는 배열
--   queryFn(두번째 파라미터)은 Promise를 리턴하는 함수
--   최종 반환 값은 API의 성공, 실패 여부, 반환값을 포함한 객체
-
-#### useMutation
-
-data fetching을 위한 기능이며, 주로 post, update 요청을 할 때 사용합니다.
-useMutation의 첫 번째 파라미터에 비동기 함수가 들어가고, 두 번째 인자로 상황 별 분기 설정이 들어간다
-
-### SWR
-
-SWR 먼저 캐시로부터 데이터를 반환한 후, 서버에 데이터를 가져오는 fetch 요청을 보내고, 최종적으로 최신화된 데이터를 가져옵니다.
-SWR을 사용하면 컴포넌트는 지속적 그리고 자동적으로 데이터 업데이트를 합니다.
-
-```javascript
-import useSWR from "swr"
-
-function Profile() {
-    const { data, error, isLoading } = useSWR("/api/user", fetcher) // key 문자열과 fetcher 함수
-
-    if (error) return <div>failed to load</div>
-    if (isLoading) return <div>loading...</div>
-    return <div>hello {data.name}!</div>
 }
 ```

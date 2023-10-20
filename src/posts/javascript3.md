@@ -1,6 +1,6 @@
 ---
 slug: "/react-query"
-title: "useEffect 사용법과 안티패턴 그리고 React Query, SWR"
+title: "React Query, SWR를 비교해보자"
 date: "2023-08-28"
 category: "React"
 tags: ["Javascript", "React", "query", "SWR"]
@@ -101,4 +101,6 @@ function Profile() {
     1. Mutation
        둘 다 변형시킨다는 의미에서는 같지만, React Query의 뮤테이션은 post/patch/put/delete를 통해 서버의 상태를 변형시키는 것이고, SWR의 뮤테이션은 useSWR()을 통해 받아온 데이터를 클라이언트 사이드에서 변형시켜 업데이트해 주는 개념이라는 차이가 있습니다.
 
-https://mycodings.fly.dev/blog/2023-02-12-react-useeffect-hook-complete-guide
+### 출처
+
+-   https://mycodings.fly.dev/blog/
