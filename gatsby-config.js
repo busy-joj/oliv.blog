@@ -5,7 +5,7 @@
 module.exports = {
     siteMetadata: {
         title: `oliv.blog`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+        description: `지속가능한 개발자가 되기 위해 써내려가는 블로그입니다.`,
         author: `Jeong Younjung`,
         siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     },
