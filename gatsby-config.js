@@ -7,7 +7,7 @@ module.exports = {
         title: `oliv.blog`,
         description: `지속가능한 개발자가 되기 위해 써내려가는 블로그입니다.`,
         author: `Jeong Younjung`,
-        siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+        siteUrl: `https://d301gw6ixi4s19.cloudfront.net/`,
     },
     plugins: [
         `gatsby-plugin-image`,
@@ -19,6 +19,22 @@ module.exports = {
                         resolve: `gatsby-remark-images`,
                         options: {
                             maxWidth: 800,
+                        },
+                    },
+                    {
+                        resolve: "gatsby-remark-prismjs",
+                        options: {
+                            classPrefix: "language-",
+                            inlineCodeMarker: null,
+                            aliases: {},
+                            showLineNumbers: false,
+                            noInlineHighlight: false,
+                            languageExtensions: [],
+                            prompt: {
+                                user: "root",
+                                host: "localhost",
+                                global: false,
+                            },
                         },
                     },
                 ],

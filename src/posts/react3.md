@@ -15,15 +15,16 @@ ref는 익숙한데, forwardRef는 익숙하지 않다!!
 ref를 이용하면, DOM element에 손쉽게 접근할 수 있다.
 
 ```javascript
-    const inputRef = useRef();
-    const handleClick = () => {
-        inputRef.current.focus()
-    }
+const inputRef = useRef();
+const handleClick = () => {
+    inputRef.current.focus()
+}
 
-    return (
-        <input ref={inputRef}/>
-        <button onClick={handleClick}>클릭</button>
-    )
+return (
+    <input ref={inputRef}/>
+    <button onClick={handleClick}>클릭</button>
+)
+
 ```
 
 클릭버튼을 눌렀을 때, ref를 이용해 input DOM 요소에 접근하여 focus 한다.  
