@@ -2,6 +2,7 @@
 slug: "/my-career"
 title: "교양PD가 개발자가 된  이유"
 date: "2023-10-11"
+series: "oliv의 성장일지"
 category: "성장일지"
 tags: ["frontend", "developer", "diary"]
 ---

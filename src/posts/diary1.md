@@ -2,6 +2,7 @@
 slug: "/blog-code-prismjs"
 title: "코드 블럭 하이라이트 추가하기"
 date: "2023-11-02"
+series: "기술 블로그 개설 A to Z"
 category: "blog"
 tags: ["blog", "gatsby", "prismjs"]
 ---

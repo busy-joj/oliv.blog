@@ -25,9 +25,9 @@ const Aside = ({ siteCatagory, siteArticleTotal }) => {
                             All<span> ({siteArticleTotal})</span>
                         </Link>
                     </li>
-                    {siteCatagory.map(catagory => (
-                        <li class="info">
-                            <Link to="/" className="info-link">
+                    {siteCatagory.map((catagory, index) => (
+                        <li key={index} class="info">
+                            <Link to={`/`} className="info-link">
                                 {catagory.fieldValue}({catagory.totalCount})
                             </Link>
                         </li>

@@ -8,6 +8,7 @@ import * as styles from "../components/index.module.css"
 import "../components/post.css"
 
 const IndexPage = ({ data }) => {
+    console.log("index", data)
     return (
         <Layout>
             <div className={styles.textCenter}>
@@ -23,8 +24,12 @@ const IndexPage = ({ data }) => {
                             </span>
                             <span className="desc">{node.excerpt}</span>
                             <span>
-                                {node.frontmatter.tags.map(item => {
-                                    return <span className="tag">{item}</span>
+                                {node.frontmatter.tags.map((item, index) => {
+                                    return (
+                                        <span key={index} className="tag">
+                                            {item}
+                                        </span>
+                                    )
                                 })}
                             </span>
                         </div>
@@ -37,7 +42,7 @@ const IndexPage = ({ data }) => {
 
 export const Head = () => <Seo title="Home" />
 
-export const query = graphql`
+export const indexQuery = graphql`
     query {
         site {
             siteMetadata {
