@@ -153,6 +153,20 @@ td {
     flex-direction: column;
     color: var(--color-primary);
     gap: 4px;
+    overflow-y: auto;
+}
+.aside-txt ul {
+    overflow-y: auto;
+}
+.aside-txt ul::-webkit-scrollbar {
+    width: 5px;
+}
+.aside-txt ul::-webkit-scrollbar-thumb {
+    background: rgba(209, 213, 159, 1); /* 스크롤바 색상 */
+    border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+.aside-txt ul::-webkit-scrollbar-track {
+    background: rgb(244, 245, 236); /*스크롤바 뒷 배경 색상*/
 }
 .aside-txt .name {
     font-weight: 800;
@@ -254,10 +268,10 @@ td {
     .aside {
         width: 250px;
         box-sizing: border-box;
-        padding: 40px 25px 30px 15px;
+        padding: 40px 25px 5px 15px;
         position: fixed;
         top: 65px;
-        bottom: 65px;
+        bottom: 67px;
     }
     .content {
         margin-left: 250px;
