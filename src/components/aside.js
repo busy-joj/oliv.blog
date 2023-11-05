@@ -7,9 +7,9 @@ import "./layout.css"
 
 const Aside = ({ siteCatagory, siteArticleTotal }) => {
     return (
-        <div class="aside">
-            <div class="aside-img">
-                <span class="img">
+        <div className="aside">
+            <div className="aside-img">
+                <span className="img">
                     <StaticImage
                         src="../images/profile.jpg"
                         loading="eager"
@@ -17,16 +17,16 @@ const Aside = ({ siteCatagory, siteArticleTotal }) => {
                     />
                 </span>
             </div>
-            <div class="aside-txt">
-                <span class="name">category</span>
+            <div className="aside-txt">
+                <span className="name">category</span>
                 <ul>
-                    <li class="info">
+                    <li className="info">
                         <Link to="/" className="info-link">
                             All<span> ({siteArticleTotal})</span>
                         </Link>
                     </li>
                     {siteCatagory.map((catagory, index) => (
-                        <li key={index} class="info">
+                        <li key={index} className="info">
                             <Link to={`/`} className="info-link">
                                 {catagory.fieldValue}({catagory.totalCount})
                             </Link>
@@ -34,7 +34,7 @@ const Aside = ({ siteCatagory, siteArticleTotal }) => {
                     ))}
                 </ul>
             </div>
-            <div class="aside-bt">
+            <div className="aside-bt">
                 <Link to="https://github.com/busy-joj">
                     <FaGithub className="btn-icon" />
                     <span className="blind">GitHub</span>

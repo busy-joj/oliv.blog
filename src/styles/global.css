@@ -201,6 +201,9 @@ td {
 .post-article-txt h3 {
     margin: 30px 0 10px;
 }
+.post-article-txt h4 {
+    margin: 25px 0 5px;
+}
 
 /*** footer ***/
 .footer {
