@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import { FaAngleDown, FaFolder } from "react-icons/fa6"
 
 import Layout from "../components/layout"
+
+import * as styles from "../components/index.module.css"
 import Seo from "../components/seo"
 
 const DiaryPage = ({ data }) => {
@@ -36,34 +39,52 @@ const DiaryPage = ({ data }) => {
         const resultArray = Object.values(resultObject)
         return resultArray
     }
-    console.log(seriesData)
     useEffect(() => {
         setJoinSeriesData(joinObjects(seriesData))
     }, [])
     return (
         <Layout>
-            <h1>diary page</h1>
-            <p>제작중입니다.</p>
             {/* 시리즈 컴포넌트 스타일 작업하여 수정필요 */}
             {joinSeriesData ? (
-                <div>
-                    {joinSeriesData.map(series => {
-                        return (
-                            <div key={series.series}>
-                                {series.series}
-                                {series.datas.map(data => {
-                                    return (
-                                        <div key={data.slug}>{data.title}</div>
-                                    )
-                                })}
-                            </div>
-                        )
-                    })}
+                <div className={styles.textCenter}>
+                    <div className="post-accodian">
+                        <h3 className="post-tit">diary page</h3>
+                        {joinSeriesData.map(series => {
+                            return (
+                                <div
+                                    key={series.series}
+                                    className="post-accodian-wrap">
+                                    <div className="post-accodian-tap">
+                                        <span className="tit">
+                                            <span className="tit-icon close">
+                                                📁
+                                            </span>
+                                            <span className="tit-icon open">
+                                                📂
+                                            </span>{" "}
+                                            {series.series}
+                                        </span>
+                                        <button className="btn">
+                                            <FaAngleDown className="btn-icon" />
+                                        </button>
+                                    </div>
+                                    <div className="post-accodian-content">
+                                        {series.datas.map(data => {
+                                            return (
+                                                <div key={data.slug}>
+                                                    {data.title}
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             ) : (
                 <></>
             )}
-            <Link to="/">Go back to the homepage</Link>
         </Layout>
     )
 }

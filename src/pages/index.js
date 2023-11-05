@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => {
         <Layout>
             <div className={styles.textCenter}>
                 <div className="post-list">
-                    <h3 className="post-list-tit">Recent Posts</h3>
+                    <h3 className="post-tit">Recent Posts</h3>
                     {data.allMarkdownRemark.edges.map(({ node }) => (
                         <div key={node.id} className="post-list-box">
                             <Link to={node.frontmatter.slug} className="tit">

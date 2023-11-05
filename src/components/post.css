@@ -12,11 +12,13 @@
     margin-left: 10px;
 }
 
-/*** post 리스트형 ***/
-.post-list-tit {
+/*** post 타이틀 ***/
+.post-tit {
     font-size: 24px;
     color: var(--color-sub);
 }
+/*** post 리스트형 ***/
+
 .post-list-box {
     display: flex;
     flex-direction: column;
@@ -29,7 +31,7 @@
     letter-spacing: -0.5px;
 }
 .post-list-box + .post-list-box {
-    border-top: 1px solid #f1f3f5;
+    border-top: 1px solid #e6e6e6;
 }
 .post-list-box .tit {
     display: block;
@@ -61,5 +63,64 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border-bottom: 1px solid #f1f3f5;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+/*** post 아코디언형 ***/
+.post-accodian {
+}
+.post-accodian-wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    width: 80%;
+    margin: 0 auto;
+    gap: 10px;
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    border-bottom: 1px solid #e6e6e6;
+}
+post-accodian-wrap:first-child {
+    padding: 30px 0 0 0;
+}
+.post-accodian-tap {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.post-accodian-tap .tit {
+    display: block;
+    font-weight: 600;
+    font-size: 24px;
+}
+.post-accodian-tap .tit-icon {
+    height: 36px;
+}
+.post-accodian-tap .tit-icon.close {
+    display: inline-block;
+}
+.post-accodian-tap .tit-icon.open {
+    display: none;
+}
+.post-accodian-tap.on .tit-icon.close {
+    display: none;
+}
+.post-accodian-tap.on .tit-icon.open {
+    display: inline-block;
+}
+.post-accodian-tap:hover .tit {
+    color: var(--color-sub);
+}
+.post-accodian-tap .btn {
+    margin-left: auto;
+    padding: 8px 0 0 0;
+}
+.post-accodian-tap .btn-icon {
+    width: 28px;
+    height: 17px;
+}
+.post-accodian-content {
+    display: none;
 }
