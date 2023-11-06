@@ -34,7 +34,6 @@ td {
 button {
     border: none;
     background: none;
-    cursor: pointer;
 }
 .blind {
     position: absolute;

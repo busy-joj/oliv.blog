@@ -75,7 +75,6 @@
     text-align: justify;
     width: 80%;
     margin: 0 auto;
-    gap: 10px;
     font-size: 16px;
     letter-spacing: -0.5px;
     border-bottom: 1px solid #e6e6e6;
@@ -84,7 +83,7 @@ post-accodian-wrap:first-child {
     padding: 30px 0 0 0;
 }
 .post-accodian-tap {
-    padding: 30px 0;
+    padding: 20px 0;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -95,32 +94,57 @@ post-accodian-wrap:first-child {
     font-weight: 600;
     font-size: 24px;
 }
-.post-accodian-tap .tit-icon {
+.post-accodian-wrap .tit-icon {
     height: 36px;
 }
-.post-accodian-tap .tit-icon.close {
+.post-accodian-wrap .tit-icon.close {
     display: inline-block;
 }
-.post-accodian-tap .tit-icon.open {
+.post-accodian-wrap.on .tit-icon.close {
     display: none;
 }
-.post-accodian-tap.on .tit-icon.close {
+.post-accodian-wrap .tit-icon.open {
     display: none;
 }
-.post-accodian-tap.on .tit-icon.open {
+.post-accodian-wrap.on .tit-icon.open {
     display: inline-block;
 }
 .post-accodian-tap:hover .tit {
     color: var(--color-sub);
 }
-.post-accodian-tap .btn {
-    margin-left: auto;
-    padding: 8px 0 0 0;
-}
 .post-accodian-tap .btn-icon {
+    margin-left: auto;
+    margin-top: 5px;
     width: 28px;
     height: 17px;
 }
-.post-accodian-content {
-    display: none;
+.post-accodian-wrap .post-accodian-content {
+    height: 0;
+    opacity: 0;
+}
+.post-accodian-wrap.on .post-accodian-content {
+    height: auto;
+    animation: fadeIn 0.2s ease-in-out forwards;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgb(197 213 159 / 18%);
+}
+.post-accodian-wrap.on .btn-icon {
+    transform: rotate(180deg);
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        height: 0%;
+    }
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+}
+.post-accodian-content .link:hover {
+    color: var(--color-primary);
+    font-weight: 600;
 }

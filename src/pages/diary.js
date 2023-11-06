@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { graphql } from "gatsby"
-import { FaAngleDown, FaFolder } from "react-icons/fa6"
+import { Link, graphql } from "gatsby"
+import { FaAngleDown } from "react-icons/fa6"
 
 import Layout from "../components/layout"
 
@@ -9,6 +9,7 @@ import Seo from "../components/seo"
 
 const DiaryPage = ({ data }) => {
     const [joinSeriesData, setJoinSeriesData] = useState([])
+    const [selectedIndex, setSelectedIndex] = useState(null)
 
     let edges = data.allMarkdownRemark.edges
     const seriesData = Object.entries(edges).reduce((acc, [_, value]) => {
@@ -39,6 +40,13 @@ const DiaryPage = ({ data }) => {
         const resultArray = Object.values(resultObject)
         return resultArray
     }
+    const handleAccodian = (e, index) => {
+        if (selectedIndex === index) {
+            setSelectedIndex(null)
+        } else {
+            setSelectedIndex(index)
+        }
+    }
     useEffect(() => {
         setJoinSeriesData(joinObjects(seriesData))
     }, [])
@@ -49,12 +57,16 @@ const DiaryPage = ({ data }) => {
                 <div className={styles.textCenter}>
                     <div className="post-accodian">
                         <h3 className="post-tit">diary page</h3>
-                        {joinSeriesData.map(series => {
+                        {joinSeriesData.map((series, index) => {
                             return (
                                 <div
                                     key={series.series}
-                                    className="post-accodian-wrap">
-                                    <div className="post-accodian-tap">
+                                    className={`post-accodian-wrap ${
+                                        selectedIndex === index ? "on" : ""
+                                    }`}>
+                                    <div
+                                        className="post-accodian-tap"
+                                        onClick={e => handleAccodian(e, index)}>
                                         <span className="tit">
                                             <span className="tit-icon close">
                                                 📁
@@ -64,19 +76,21 @@ const DiaryPage = ({ data }) => {
                                             </span>{" "}
                                             {series.series}
                                         </span>
-                                        <button className="btn">
-                                            <FaAngleDown className="btn-icon" />
-                                        </button>
+                                        <FaAngleDown className="btn-icon" />
                                     </div>
-                                    <div className="post-accodian-content">
+                                    <ul className="post-accodian-content">
                                         {series.datas.map(data => {
                                             return (
-                                                <div key={data.slug}>
-                                                    {data.title}
-                                                </div>
+                                                <li key={data.slug}>
+                                                    <Link
+                                                        to={data.slug}
+                                                        className="link">
+                                                        {data.title}
+                                                    </Link>
+                                                </li>
                                             )
                                         })}
-                                    </div>
+                                    </ul>
                                 </div>
                             )
                         })}
