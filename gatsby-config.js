@@ -12,6 +12,12 @@ module.exports = {
     plugins: [
         `gatsby-plugin-image`,
         {
+            resolve: `gatsby-plugin-google-gtag`,
+            options: {
+                trackingIds: ["G-FPSELH07Q0"],
+            },
+        },
+        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
