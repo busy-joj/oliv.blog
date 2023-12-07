@@ -200,7 +200,9 @@ button {
 .content {
     flex: 1 1 0;
 }
-
+.post-article-txt h2 {
+    margin: 40px 0 10px;
+}
 .post-article-txt h3 {
     margin: 30px 0 10px;
 }
@@ -243,6 +245,106 @@ button {
 .gatsby-resp-image-link {
     margin: 5px 0;
     text-align: center;
+}
+
+/* Marquee */
+.marquee {
+    width: 100%;
+    height: 124px;
+    background: #8294c4;
+    overflow: hidden;
+}
+.marquee-track {
+    width: 100%;
+    padding: 24px 0;
+    position: relative;
+}
+.marquee-track-list {
+    position: absolute;
+    height: auto;
+}
+.marquee-track-list .list-box {
+    white-space: nowrap;
+    display: flex;
+    position: relative;
+    will-change: transform;
+}
+.marquee-track-list .txt {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "SUIT";
+    color: #26272a;
+    padding-right: 40px;
+}
+.marquee-track-list .txt:nth-child(2n) {
+    color: #e7e7e7;
+}
+
+.marquee-track-list.original.toLeft {
+    animation: 80s linear 0s infinite normal forwards running toLeft1;
+}
+.marquee-track-list.clone.toLeft {
+    animation: 80s linear 0s infinite normal none running toLeft2;
+}
+
+@keyframes toLeft1 {
+    /* 원본용 - 왼쪽방향 */
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    50.01% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes toLeft2 {
+    /* 클론용 - 왼쪽방향 */
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.marquee-track-list.original.toRight {
+    animation: 100s linear 0s infinite normal forwards running toRight1;
+}
+.marquee-track-list.clone.toRight {
+    animation: 100s linear 0s infinite normal none running toRight2;
+}
+
+@keyframes toRight1 {
+    /* 원본용 - 오른쪽방향 */
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    50.01% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes toRight2 {
+    /* 클론용 - 오른쪽방향 */
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200%);
+    }
 }
 /*** mediaQuery ***/
 @media (min-width: 768px) {

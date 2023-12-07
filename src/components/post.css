@@ -66,6 +66,20 @@
     border-bottom: 1px solid #e6e6e6;
 }
 
+.post-article-txt li {
+    list-style: disc;
+    margin-left: 20px;
+}
+.post-article-txt .point {
+    font-weight: bold;
+    color: #c773d4;
+}
+.post-article-txt .result {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+}
 /*** post 아코디언형 ***/
 .post-accodian {
 }
