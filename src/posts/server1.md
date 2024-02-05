@@ -1,5 +1,5 @@
 ---
-slug: "/react-contribution"
+slug: "/express-crawler"
 title: "express로 웹 크롤링하기"
 date: "2024-01-11"
 series: "Project. 코테PT💪"
